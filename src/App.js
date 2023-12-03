@@ -9,7 +9,6 @@ function App() {
   //     const response = await fetch('https://opentdb.com/api.php?amount=50&category=9&type=multiple')
   //     const data = await response.json()
   //     setQuestions(data.results)
-      
   //   }
     
   //   fetchQuestions()
@@ -17,30 +16,26 @@ function App() {
   
   // console.log(questions)
   return (
-    <>
-    <main className=" min-h-full">
-        <div className=" p-[30px] max-w-[700px] border-[3px] border-gray-500 rounded-[10px]">
-          <div className="flex justify-between">
-            <h1 className=' font-bold text-[20px]'>Quiz App</h1>
-            <p>{}/10</p>
+    <main>
+          <div className='title'>
+            <h1>QuizApp!</h1>
           </div>
+          <div className='app'>
+            <p className='question-number'>{} / 10</p>
+            <p className='question'>What did the sdjknf</p>
 
-          <h1 className=' font-medium text-[30px]'>Question 1:</h1>
-          <p className='font-medium'>Placeholder</p>
-
-        <div className='flex flex-col gap-[20px]'>
-          <button className='border-[5px] min-w-full p-[15px] rounded-[10px] hover:bg-blue-300 focus:bg-blue-400'></button>
-          <button className='border-[5px] min-w-full p-[15px] rounded-[10px] hover:bg-blue-300 focus:bg-blue-400'></button>
-          <button className='border-[5px] min-w-full p-[15px] rounded-[10px] hover:bg-blue-300 focus:bg-blue-400'></button>
-          <button className='border-[5px] min-w-full p-[15px] rounded-[10px] hover:bg-blue-300 focus:bg-blue-400'></button>
-        </div>
-        <div className='flex justify-between'>
-          <button type='submit' className=' bg-green-300 hover:bg-green-500 p-[10px] px-[20px]'>Back</button>
-          <button type='submit' className=' bg-green-300 hover:bg-green-500 p-[10px] px-[20px]'>Next</button>
-        </div>
-      </div>
+            <div className='answer-options'>
+              <button className='btn'></button>
+              <button className='btn'></button>
+              <button className='btn'></button>
+              <button className='btn'></button>
+            </div>
+            <div className='flex justify-between'>
+              <button type='submit' className='back-btn'>Back</button>
+              <button type='submit' className='next-btn'>Next</button>
+            </div>
+          </div>
     </main>
-    </>
   );
 }
 

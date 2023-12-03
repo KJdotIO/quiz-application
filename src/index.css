@@ -1,3 +1,82 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #eeeeee;
+    font-family: system-ui, 'Poppins';
+}
+
+.title {
+    background: #ffffff;
+    width: 90%;
+    max-width: 600px;
+    margin: 100px auto 0;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.app {
+    background: #ffffff;
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto 0;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.title h1 {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.btn {
+    color: #000000;
+    background-color: #ffffff;
+    font-weight: 500;
+    width: 100%;
+    border: 1px solid;
+    padding: 20px;
+    margin: 10px 0;
+    text-align: left;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.btn:hover {
+    background-color: rgb(84, 158, 255);
+    color: white;
+}
+
+.btn:active, .next-btn:active, .back-btn:active {
+    background-color: rgb(61, 144, 252);
+}
+
+.next-btn, .back-btn {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    background-color: rgb(84, 158, 255);
+    font-weight: 500;
+    padding: 10px 30px;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+.question-number {
+    text-align: right;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.question {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
