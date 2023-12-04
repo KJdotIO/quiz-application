@@ -80,3 +80,22 @@ body {
     font-weight: 600;
     margin-bottom: 5px;
 }
+.btn.selected {
+    background-color: darkblue; 
+    color: white;
+  }
+  
+  .btn.correct {
+    background-color: green;
+    color: white;
+  }
+  
+  .btn.incorrect {
+    background-color: red;
+    color: white;
+  }
+  
+  .btn.selected {
+    border: 2px solid darkblue; /* Adjust to your preferred shade of blue */
+  }
+  
