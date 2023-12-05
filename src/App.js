@@ -14,14 +14,19 @@ function App() {
 
   const fetchNewQuestions = async () => {
     setIsLoading(true);
-    const response = await fetch('https://opentdb.com/api.php?amount=50&category=9&type=multiple');
-    const data = await response.json();
-    const shuffledQuestions = data.results.sort(() => 0.5 - Math.random()).slice(0, 10);
-    setQuestions(shuffledQuestions);
-    setIsLoading(false);
-    setQuizEnded(false);
-    setUserAnswers({});
-    setCurrentQuestionIndex(0);
+    try {
+      const response = await fetch('https://opentdb.com/api.php?amount=50&category=9&difficulty=easy&type=multiple');
+      const data = await response.json();
+      const shuffledQuestions = data.results.sort(() => 0.5 - Math.random()).slice(0, 10);
+      setQuestions(shuffledQuestions);
+      setIsLoading(false);
+      setQuizEnded(false);
+      setUserAnswers({});
+      setCurrentQuestionIndex(0);
+      
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   const handleAnswerSelect = (answer) => {
@@ -66,8 +71,17 @@ function App() {
     return <div>Loading...</div>;
   }
 
+  const decodeHtml = (html) => {
+    const txt = document.createElement('textarea');
+    txt.innerHTML = html;
+    return txt.value;
+  }
+
+  
   const currentQuestion = questions[currentQuestionIndex];
   const options = quizEnded || currentQuestionIndex in userAnswers ? userAnswers[currentQuestionIndex]?.options : [currentQuestion.correct_answer, ...currentQuestion.incorrect_answers].sort(() => Math.random() - 0.5);
+  
+  const decodedQuestions = decodeHtml(currentQuestion.question)
 
   return (
     <main>
@@ -76,7 +90,7 @@ function App() {
       </div>
       <div className='app'>
         <p className='question-number'>{currentQuestionIndex + 1} / {questions.length}</p>
-        <p className='question'>{currentQuestion.question}</p>
+        <p className='question'>{decodedQuestions}</p>
 
         <div className='answer-options'>
           {options.map((option, index) => {
