@@ -55,7 +55,7 @@ body {
 }
 
 .btn:active, .next-btn:active, .back-btn:active {
-    background-color: rgb(61, 144, 252);
+    background-color: rgb(80, 152, 247);
 }
 
 .next-btn, .back-btn {
@@ -81,21 +81,21 @@ body {
     margin-bottom: 5px;
 }
 .btn.selected {
-    background-color: darkblue; 
+    background-color: rgb(84, 158, 255); 
     color: white;
   }
   
   .btn.correct {
-    background-color: green;
+    background-color: rgb(65, 202, 65);
     color: white;
   }
   
   .btn.incorrect {
-    background-color: red;
+    background-color: rgb(220, 39, 39);
     color: white;
   }
-  
+
   .btn.selected {
-    border: 2px solid darkblue; /* Adjust to your preferred shade of blue */
+    border: 2px solid rgb(84, 158, 255); /* Adjust to your preferred shade of blue */
   }
   
