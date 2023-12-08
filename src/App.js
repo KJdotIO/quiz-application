@@ -17,7 +17,7 @@ function App() {
     try {
       const response = await fetch('https://opentdb.com/api.php?amount=50&category=9&difficulty=easy&type=multiple');
       const data = await response.json();
-      const shuffledQuestions = data.results.sort(() => 0.5 - Math.random()).slice(0, 10);
+      const shuffledQuestions = data.results.sort(() => 0.5 - Math.random()).slice(0, 5);
       setQuestions(shuffledQuestions);
       setIsLoading(false);
       setQuizEnded(false);
